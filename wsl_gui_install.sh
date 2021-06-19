@@ -23,7 +23,7 @@ sudo -H vncpasswd
 sudo -H -u gdm vncpasswd
 sudo mv /usr/bin/Xorg /usr/bin/Xorg_old
 sudo touch /usr/bin/Xorg_new
-echo '#!/bin/bash
+echo "#!/bin/bash
 for arg do
   shift
   case $arg in
@@ -49,7 +49,7 @@ command=("/usr/bin/Xvnc" "-geometry" "1366x768" "-PasswordFile" "${HOME:-/root}/
 
 systemd-cat -t /usr/bin/Xorg echo "Starting Xvnc:" "${command[@]}"
 
-exec "${command[@]}"' >> /usr/bin/Xorg_new
+exec "${command[@]}"" | sudo tee -a /usr/bin/Xorg_new > /dev/null
 sudo chmod 0755 /usr/bin/Xorg_new
 sudo ln -sf Xorg_new /usr/bin/Xorg
 genie -s
