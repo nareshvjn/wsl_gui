@@ -52,7 +52,7 @@ systemd-cat -t /usr/bin/Xorg echo "Starting Xvnc:" "${command[@]}"
 exec "${command[@]}"" | sudo tee -a /usr/bin/Xorg_new > /dev/null
 sudo chmod 0755 /usr/bin/Xorg_new
 sudo ln -sf Xorg_new /usr/bin/Xorg
-genie -s
 echo 'AutomaticLoginEnable=true
  AutomaticLogin=nkvjn' >> /etc/gdm3/custom.conf
 echo 'Open VNCviewer in windows and conect to localhost:5900'
+genie -s
