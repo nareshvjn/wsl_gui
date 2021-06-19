@@ -1,4 +1,8 @@
+#!/bin/bash
+
 #Guide to Install GNOME gui in wsl2
+#https://gist.github.com/tdcosta100/385636cbae39fc8cd0937139e87b1c74
+
 sudo apt update
 sudo apt install ubuntu-desktop-minimal tigervnc-standalone-server -y
 wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
